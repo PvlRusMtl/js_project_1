@@ -1,34 +1,47 @@
 "use strict";
 
-// if (4 == 9) {
-//     console.log('ok!');
-// } else {
-//     console.log('error!');
+// const hamburger = 5;
+// const fries = 0;
+
+// if (hamburger && fries) {
+//     console.log("I'm syt");
 // }
 
-// const num = 50;
-// if (num < 49) {
-//     console.log('error!');
-// } else if (num > 100) {
-//     console.log('too much!');
+// console.log((hamburger && fries));
+
+// const hamburger = 3;
+// const fries = 0;
+// const cola = 2;
+// console.log(hamburger ===3 && fries && cola);
+
+// console.log(1 && 0);
+// console.log(1 && 5);
+// console.log(null && 5);
+// console.log(1 && 'fsfndkkd');
+
+
+// if (hamburger === 3 && cola === 1 && fries) {
+//     console.log("all syt");
 // } else {
-//     console.log('ok!');
+//     console.log("we leave");
 // }
 
-// (num === 50) ?     console.log('ok!') :     console.log('error!');
+// console.log((hamburger && fries));
 
-const num = 50;
-switch(num) {
-    case 49: 
-        console.log('Not ok');
-        break;
-    case 100:
-        console.log('Not ok');
-        break;
-    case 51:
-        console.log('ok');
-        break;
-    default:
-        console.log('not today');
-        break;
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger === 3 && (cola ===2 || fries === 3) && nuggets) {
+    console.log("all happy");
+} else {
+    console.log("we leave");
 }
+console.log((hamburger || cola || fries));
+
+let johnReport, alexReport, samReport, mariaReport = 'done';
+
+console.log(hamburger === 3 && cola ===2 || fries === 3 && nuggets);
+
+console.log(!0);
