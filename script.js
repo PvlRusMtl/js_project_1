@@ -1,48 +1,34 @@
 "use strict";
 
-for (let i = 0; i < 3; i++) {
-    console.log(i);
-    for (let j = 0; j < 3; j++) {
-        console.log(j);
-        
-    }
-}
+const numOfFilms = +prompt('How many movies have you seen?');
 
-let res = '';
-const length = 7;
+const personalMovieDb = {
+    count: numOfFilms,
+    movies: {},
+    actors: {},
+    genres: {},
+    privat: false
+};
 
-for(let i = 1; i < length; i++) {
-    for (let j = 0; j < i; j++) {
-        res += '*';
-    }
-    res += '\n';
-}
-
-console.log(res);
-
-first: for (let i = 0; i < 3; i++) {
-    console.log(`First level: ${i}`);
-    for (let j = 0; j < 3; j++) {
-        console.log(`Second level: ${j}`); 
-        for (let k = 0; k < 3; k++) {
-            if (k == 2) continue first;
-            console.log(`Third level: ${k}`);       
-        }
-    }      
-}
-
-for (let i = 2; i <= 16; i++) {
-    if (i % 2 === 0) {
-        continue;
-    } else {
-        console.log(i);
-    }
-}
+for (let i = 0; i < 2; i++) {
+    const a = prompt("Last of watched movies?", ''),
+          b = prompt('How could you evaluate it?', '');
     
-let i = 2;
-while (i < 16) {
-    if (i%2 !== 0) {
-        console.log(i);
-    }    
-    i++;
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDb.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
 }
+if (personalMovieDb.count < 10) {
+    console.log("Too little movies");
+} else if (personalMovieDb.count >= 10 && personalMovieDb.count < 30) {
+    console.log("Classic");
+} else if (personalMovieDb.count >= 30) {
+    console.log("Kinoman");
+} else {
+    console.log("Error");
+}
+console.log(personalMovieDb);
