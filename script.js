@@ -1,107 +1,96 @@
-// 'use strict';
+'use strict';
 
-// const usdCurr = 28;
-// const discount = 0.9;
 
-// function convert(amount, curr){
-//     return curr * amount;
-    
-// }
+// let numberOfFilms;
+// function start() {
+//     numberOfFilms = prompt('How many movies have you seen?');
 
-// function promotion(result) {
-//     console.log(result * discount);
-// }
-// promotion(convert(500, usdCurr));
-
-// function test() {
-//     for (let i = 0; i < 5; i++) {
-//         console.log(i);
-//         if (i === 3) return
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = prompt('How many movies have you seen?');
 //     }
-//     console.log('done');
 // }
-// test();
+// start();
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-// function doNothing() {};
-// console.log(doNothing() === undefined);
-
-
-// function getMathResult(base, repeat) {
-//     if (typeof(repeat) != 'number' || repeat <= 0) {
-//         return base;
-//     } else {
-//         let str = '';
-//         for (let i = 1; i <= repeat; i++){
-//             if (i === repeat) {
-//                 str += `${base * i}`;                
-//             } else {
-//                 str += `${base * i}---`;                
-//             }        
+// function rememberMyFilms(){
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Last movie?', '').trim(),
+//               b = prompt('How could you evaluate it?', '');
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+//             i--;
 //         }
-//         return str;
 //     }
 // }
-// getMathResult(3, -3);
-// //
-let numberOfFilms;
-function start() {
-    numberOfFilms = prompt('How many movies have you seen?');
-
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = prompt('How many movies have you seen?');
-    }
-}
-start();
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-function rememberMyFilms(){
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Last movie?', ''),
-              b = prompt('How could you evaluate it?', '');
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
-}
 
 // rememberMyFilms();
 
-function detectPersonalLevel(){
-    if (personalMovieDB.count < 10) {
-        console.log('too little');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log('classic');
-    } else if (personalMovieDB.count >= 30) {
-        console.log('kinoman');
-    } else {
-        console.log('error');
-    }
-}
+// function detectPersonalLevel(){
+//     if (personalMovieDB.count < 10) {
+//         console.log('too little');
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log('classic');
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log('kinoman');
+//     } else {
+//         console.log('error');
+//     }
+// }
 
 // detectPersonalLevel();
 
-function showMyDB(hidden){
-    if (!hidden) {
-        console.log(personalMovieDB);
+// function showMyDB(hidden){
+//     if (!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         personalMovieDB.genres[i-1] = prompt(`Your favorite genre number ${i}?`, '');
+//         } 
+// }
+
+// // writeYourGenres();
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
     }
-}
+};
+options.makeTest();
 
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i-1] = prompt(`Your favorite genre number ${i}?`, '');
-        } 
-}
-
-writeYourGenres();
+const {border, bg} = options.colors;
+console.log(border);
+// console.log(Object.keys(options).length);
+// let counter = 0;
+// for (let key in options ) {
+//     if (typeof(options[key]) === 'object') {
+//         for(let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+            
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//         counter++;
+//     }
+// }
+// console.log(counter);
