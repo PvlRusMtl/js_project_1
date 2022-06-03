@@ -75,57 +75,50 @@
 //     }
     
 // };
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'zzz', 'sss'];
 
-function sortStudentsByGroups(arr) {
-    const result = new Array(Math.ceil(arr.length / 3)).fill().map(_ => arr.sort().splice(0, 3));
-    if (result[result.length - 1].length < 3 && result[result.length - 1].length >= 1) {
-        const lastArrayUncomplete = result[result.length -1].join();
-        result.pop();
-        result.push(`Оставшиеся студенты: ${lastArrayUncomplete}`);
-    } else {
-        result.push(`Оставшиеся студенты: -`);
-    }
-    console.log(result);
-    
+//To string
+//1)
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+
+//2)
+console.log(typeof(5 + ''));
+
+const num = 5;
+
+console.log('https://vk.com/catalog/' + num);
+
+const fontSize = 26 + 'px';
+
+// To Number
+//1)
+console.log(typeof(Number('4')));
+
+//2)
+console.log(typeof(+'4'));
+
+//3)
+console.log(typeof(parseInt('15px', 10)));
+
+let answ = +prompt('Hello', '');
+
+// To boolean
+
+// 0, '', num, undefined, NaN;
+
+//1)
+let switcher = null;
+if (switcher) {
+    console.log('Working...');
 }
-sortStudentsByGroups(students);
-
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function(plan) {
-        const {age} = plan;
-        const {languages} = plan.skills;
-        let str = `Мне ${age} и я владею языками: `;
-
-        languages.forEach(function(lang) {
-            str += `${lang.toUpperCase()} `;
-        });
-
-        return str;
-    }
-};
-
-function showExperience(plan) {
-    const {exp} = plan.skills;
-    return exp;
+switcher = 1;
+if (switcher) {
+    console.log('Working...');
 }
-showExperience(personalPlanPeter);
-function showProgrammingLangs(plan) {
-    const {programmingLangs} = plan.skills;
-    let str = '';
-    for (let key in programmingLangs) {
-        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
-    }
-    return str;
-}
-showProgrammingLangs(personalPlanPeter);
+
+//2)
+
+console.log(typeof(Boolean('4')));
+
+//3
+console.log(typeof(!!'4'));
