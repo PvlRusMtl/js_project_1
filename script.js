@@ -122,3 +122,22 @@ console.log(typeof(Boolean('4')));
 
 //3
 console.log(typeof(!!'4'));
+
+function fib(n) {
+    let str = [0, 1];
+    if (typeof(n) !== 'number' || n <= 0 || !Number.isInteger(n)) {
+        console.log('');
+    } else if (numberForFib === 1) {
+
+        console.log('0');
+
+    } else {
+        let i = 2;        
+        while(i < n) {
+        str[i] = str[i-1] + str[i-2];
+        i++;
+        }
+        console.log(str.join(' '));
+    }   
+}
+fib(0);
