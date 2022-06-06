@@ -76,68 +76,32 @@
     
 // };
 
-//To string
-//1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// let a = 5; debugger
 
-//2)
-console.log(typeof(5 + ''));
+// function logNumber() {
+//     console.log(a); debugger
+// }
 
-const num = 5;
+// a = 6;
+// logNumber(); debugger
 
-console.log('https://vk.com/catalog/' + num);
+// a = 8;
+// logNumber(); debugger
 
-const fontSize = 26 + 'px';
-
-// To Number
-//1)
-console.log(typeof(Number('4')));
-
-//2)
-console.log(typeof(+'4'));
-
-//3)
-console.log(typeof(parseInt('15px', 10)));
-
-let answ = +prompt('Hello', '');
-
-// To boolean
-
-// 0, '', num, undefined, NaN;
-
-//1)
-let switcher = null;
-if (switcher) {
-    console.log('Working...');
+function createCounter() {
+    let counter = 0;
+    const myFunction = function() {debugger
+        counter = counter + 1;debugger
+        return counter;debugger
+    }
+    return myFunction;
 }
-switcher = 1;
-if (switcher) {
-    console.log('Working...');
-}
+debugger
+const increment = createCounter();debugger
+const c1 = increment();debugger
+const c2 = increment();debugger
+const c3 = increment();debugger
+console.log(c1, c2, c3);
 
-//2)
 
-console.log(typeof(Boolean('4')));
-
-//3
-console.log(typeof(!!'4'));
-
-function fib(n) {
-    let str = [0, 1];
-    if (typeof(n) !== 'number' || n <= 0 || !Number.isInteger(n)) {
-        console.log('');
-    } else if (numberForFib === 1) {
-
-        console.log('0');
-
-    } else {
-        let i = 2;        
-        while(i < n) {
-        str[i] = str[i-1] + str[i-2];
-        i++;
-        }
-        console.log(str.join(' '));
-    }   
-}
-fib(0);
+let x = 5; alert( x++ );
