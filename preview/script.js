@@ -1,3 +1,4 @@
+'use strict';
 const btns = document.querySelectorAll('button'),
       overlay = document.querySelector('.overlay');
 
