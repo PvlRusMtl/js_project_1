@@ -76,50 +76,59 @@
     
 // };
 
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
 
-//  touchstart
-//  touchmove
-//  touchend
-//  touchenter
-//  touchleave
-//  touchcancel
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
 
-// window.addEventListener('DOMContentLoaded', () => {
-//     const box = document.querySelector('.box');
-
-//     box.addEventListener('touchstart', (e) => {
-//         e.preventDefault();
-
-//         console.log('Start');
-//         console.log(e.changedTouches);
-//     });
-
-//     box.addEventListener('touchmove', (e) => {
-//         e.preventDefault();
-
-//         console.log(e.targetTouches[0].pageX);
-//     });
-
-    // box.addEventListener('touchend', (e) => {
-    //     e.preventDefault();
-
-    //     console.log('End');
-    // });
-// });
-
-//  touches
-//  targetTouches
-//  changedTouches
-
-
-const p = document.querySelectorAll('p');
-console.log(p);
-
-function loadScript(src) {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = false;
-    document.body.append(script);
+    return answer;
 }
-loadScript('test.js');
-loadScript('some.js');
+
+console.log(isOpen(restorantData.openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    console.log(+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)), +average.slice(0, -1));
+    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < average.slice(0, -1)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    const copy = JSON.parse(JSON.stringify(data));
+
+    copy.waitors[0] = {name: 'Mike', age: 32};
+    console.log(copy.waitors);
+    return copy;
+}
+
+transferWaitors(restorantData);
+console.log(restorantData.waitors);
