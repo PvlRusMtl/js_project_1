@@ -1,30 +1,25 @@
 'use strict';
 
-const box = document.querySelector('.box');
-const block = document.querySelector('.block');
+const boxesQuery = document.querySelectorAll('.box');
+const boxesGet = document. getElementsByClassName('box');
 
-console.log(block);
+boxesQuery.forEach(box => {
+    if (box.matches('.this')) console.log(box);
+});
 
-// if (block) {
-//     console.log(block.textContent);
+console.log(boxesQuery[0].closest('.wrapper'));
+
+// boxesQuery[0].remove();
+// boxesGet[0].remove();
+
+// for (let i=0; i < 5; i++) {
+//     const div = document.createElement('div');
+//     div.classList.add('box');
+//     document.body.append(div);
 // }
 
-// block?.textContent = '123';
+// console.log(boxesQuery);
+// console.log(boxesGet);
+// // console.log(document.body.children);
 
-// console.log(1 + 2);
-
-const userData = {
-    name: 'Jeff',
-    age: null,
-    say: function() {
-        console.log('Hello!');
-    }
-};
-
-userData.say();
-userData.hey?.();
-// if(userData && userData.skills && userData.skills.js) {
-//     console.log(userData.skills.js);
-// }
-
-console.log(userData?.skills?.js);
+// console.log(Array.from(boxesGet));
