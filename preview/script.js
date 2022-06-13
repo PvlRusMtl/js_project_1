@@ -1,36 +1,19 @@
 'use strict';
-const btns = document.querySelectorAll('button'),
-      overlay = document.querySelector('.overlay');
 
+const box = document.querySelector('.box');
 
-// btn.onclick = function() {
-//     alert('Click');
-// };
+const newHeight = 100;
+const newWidth = 400;
 
-// btn.onclick = function() {
-//     alert('Second Click');
-// };
+function changeParams(elem, h, w) {
+    elem.style.height = `${h ?? 200}px`;
+    elem.style.width = `${w ?? 200}px`;
+    elem.innerHTML = (h ?? 200) * (w ?? 200);
+}
 
-let i = 0;
-const deleteElement = (e) => {
-    console.log(e.currentTarget);
-    console.log(e.type);
-    // i++;
-    // if (i == 1) {
-    //     btn.removeEventListener('click', deleteElement);
-    // }
-};
+changeParams(box, newHeight, newWidth);
 
-// btn.addEventListener('click', deleteElement);
-// overlay.addEventListener('click', deleteElement);
+let userName;
+let userKey;
 
-btns.forEach(btn => {
-    btn.addEventListener('click', deleteElement, {once: true});
-});
-
-const link = document.querySelector('a');
-link.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    console.log(event.target)
-});
+console.log(userName ?? userKey ?? 'User');
