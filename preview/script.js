@@ -1,21 +1,10 @@
 'use strict';
 
 
-function amountOfPages(summary){
-    let result = '';
-    let n = 0;
-
-    for (let i = 1; i <= summary; i++) {
-      result += i;
-      console.log(result.length);
-
-      if (result.length === summary) {
-        n = i;
-        break;
-      }
-    }
-
-    console.log(n);
-  }
-
-amountOfPages(25);
+function isPangram(string) {
+    const set = new Set(string);
+    const str1 = Array.from(set).join('')
+                        .replace(/ /g,'');
+    return (str1.substring(1).length === 26);
+}
+isPangram('The quick brown fox jumps over the lazy dog');
