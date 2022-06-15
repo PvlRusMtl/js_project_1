@@ -1,13 +1,21 @@
 'use strict';
 
-// const bigInt = 1234554863299626446446944n;
 
-const sameBigInt =  BigInt(1234554863299626446446944);
+function amountOfPages(summary){
+    let result = '';
+    let n = 0;
 
-// console.log(5n === 5);
+    for (let i = 1; i <= summary; i++) {
+      result += i;
+      console.log(result.length);
 
-let bigint = 1n;
-let number = 2;
+      if (result.length === summary) {
+        n = i;
+        break;
+      }
+    }
 
-console.log(bigint + BigInt(number));
-console.log(Number(bigint) + number);
+    console.log(n);
+  }
+
+amountOfPages(25);
