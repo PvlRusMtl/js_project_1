@@ -1,10 +1,11 @@
 'use strict';
 
 
-function isPangram(string) {
-    const set = new Set(string);
-    const str1 = Array.from(set).join('')
-                        .replace(/ /g,'');
-    return (str1.substring(1).length === 26);
-}
-isPangram('The quick brown fox jumps over the lazy dog');
+
+function deepCount(a) {
+   return a
+   .reduce((acc, val) => {
+      return acc + (Array.isArray(val) ? deepCount(val) : 0);
+   }, a.length);
+};
+deepCount([1, 5, 3]);
