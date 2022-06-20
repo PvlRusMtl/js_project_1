@@ -1,49 +1,27 @@
 'use strict';
 
-// let user = {name: 'Joe'};
+const now = new Date('2022-06-19');
+// new Date.parse('2022-06-19');
 
-// let map = new WeakMap();
-// map.set(user, 'data');
+console.log(now.setHours(50));
+console.log(now);
 
-// user = null;
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getDay());
+// console.log(now.getHours());
+// console.log(now.getUTCHours());
 
-// console.log(map);
+// console.log(now.getTimezoneOffset());
+// console.log(now.getTime());
 
-let cache = new WeakMap();
-function cacheUser(user) {
-   if (!cache.has(user)) {
-      cache.set(user, Date.now());
-   }
+let start = new Date();
 
-   return cache.get(user);
+for (let i =0; i <100000; i++) {
+   let some = i ** 3;
 }
 
-let lena = {name: 'Elena'},
-   alex = {name: 'Alex'};
+let end = new Date();
 
-cacheUser(lena);
-cacheUser(alex);
-
-lena = null;
-
-console.log(cache.has(lena));
-console.log(cache.has(alex));
-
-
-// WeakSet
-// add, has, delete;
-
-let messages = [
-   {text: 'Hello', from: 'John'},
-   {text: 'World', from: 'Alex'},
-   {text: '....', from: 'M'},
-];
-
-let readMessages = new WeakSet();
-
-readMessages.add(messages[0]);
-// readMessages.add(messages[1]);
-
-readMessages.add(messages[0]);
-messages.shift();
-console.log(readMessages.has(messages[0]));
+alert(`Cycle get ${end - start} msec`);
