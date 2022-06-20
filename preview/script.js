@@ -1,27 +1,26 @@
 'use strict';
 
-const now = new Date('2022-06-19');
-// new Date.parse('2022-06-19');
+const box = document.querySelector('.box'),
+      btn = document.querySelector('button');
 
-console.log(now.setHours(50));
-console.log(now);
+// const width = box.clientWidth;
+// const height = box.clientHeight;
+// const width = box.offsetWidth;
+// const height = box.offsetHeight;
+const width = box.scrollWidth;
+const height = box.scrollHeight;
 
-// console.log(now.getFullYear());
-// console.log(now.getMonth());
-// console.log(now.getDate());
-// console.log(now.getDay());
-// console.log(now.getHours());
-// console.log(now.getUTCHours());
+console.log(width, height);
 
-// console.log(now.getTimezoneOffset());
-// console.log(now.getTime());
+btn.addEventListener('click', () => {
+    box.style.height = box.scrollHeight + 'px';
+    // console.log(box.scrollTop);
+});
 
-let start = new Date();
+console.log(box.getBoundingClientRect().top);
 
-for (let i =0; i <100000; i++) {
-   let some = i ** 3;
-}
+const style = window.getComputedStyle(box);
 
-let end = new Date();
+console.log(style.display);
 
-alert(`Cycle get ${end - start} msec`);
+console.log(document.documentElement.scrollTop);
