@@ -1,32 +1,44 @@
 'use strict';
 
-const funds = [
-    {amount: -1400},
-    {amount: 2400},
-    {amount: -1000},
-    {amount: 500},
-    {amount: 10400},
-    {amount: -11400}
-];
+// localStorage.setItem('number', 5);
 
-const getPositiveIncomeAmount = (data) => {
-    var sum = data.reduce((acc, fund) => fund.amount > 0 ? acc + fund.amount : acc, 0);
-    return sum;
-   };
+// // localStorage.removeItem('number');
+// localStorage.clear();
 
-getPositiveIncomeAmount(funds);
+// console.log(localStorage.getItem('number'));
 
-const getTotalIncomeAmount = (data) => {
-    return data.some(num => num.amount < 0 ) ?
-        data.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0) :
-        getPositiveIncomeAmount(data);
-    
+const checkbox = document.querySelector('#checkbox'),
+        form = document.querySelector('form'),
+        change = document.querySelector('#color');
+
+if (localStorage.getItem('isChecked')) {
+    checkbox.checked = true;
+}
+
+if (localStorage.getItem('bg') === 'changed') {
+    form.style.backgroundColor = 'red';
+}
+
+checkbox.addEventListener('change', () => {
+    localStorage.setItem('isChecked', true);
+});
+
+change.addEventListener('click', () => {
+    if (localStorage.getItem('bg') === 'changed') {
+        localStorage.removeItem('bg');
+        form.style.backgroundColor = '#fff';
+    } else {
+        localStorage.setItem('bg', 'changed');
+        form.style.backgroundColor = 'red';
+    }
+});
+
+const persone = {
+    name: 'Alex',
+    age: 25
 };
 
-getTotalIncomeAmount(funds);
+// const serializedPersone = JSON.stringify(persone);
+localStorage.setItem('alex', persone);
 
-var initialValue = 0;
-var sum = [{x: -4}, {x:2}, {x:3}].reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue.x;
-}, initialValue);
-console.log(sum);
+console.log(localStorage.getItem('alex'));
