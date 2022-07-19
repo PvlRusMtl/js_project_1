@@ -1,17 +1,19 @@
 'use strict';
-// let k = 0;
 
-// function count() {
-//   for(let i = 0; i < 1e9; i++) {
-//     k++;
-//   }
-//   alert('done');
-// }
+setTimeout(() => console.log('timeout'));
 
-// count();
+Promise.resolve()
+    .then(() => console.log('promise'));
 
-setTimeout(() => {
-  console.log(1);
-}, 0);
+Promise.resolve()
+.then(() => console.log('promise_2'));
 
-console.log(2);
+console.log('code');
+
+// () => {}
+// microtasks then/catch/finally/await
+// render
+// () => {}
+// microtasks then/catch/finally/await
+// render
+// () => {}
